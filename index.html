@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>redirecting...you misspelled mercbank...you silly goose</title>
-    <meta http-equiv="refresh" content="0; url=http://www.mercbank.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mercDANK</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background-color: white;
+            font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 10rem;
+            font-weight: bold;
+            color: red;
+            animation: rastaFlash 0.2s infinite, pong 5s infinite;
+            display: none; /* Initially hide the text */
+        }
+
+        @keyframes rastaFlash {
+            0% { color: red; }
+            33% { color: yellow; }
+            66% { color: green; }
+            100% { color: red; }
+        }
+
+        @keyframes pong {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(80vw, 0);
+            }
+            50% {
+                transform: translate(80vw, 80vh);
+            }
+            75% {
+                transform: translate(0, 80vh);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
 </head>
 <body>
+    <h1 id="text">mercDANK</h1>
+
+    <script>
+        // 1/1000 chance logic
+        if (Math.random() < 0.001) {
+            // Show bouncing text
+            document.getElementById('text').style.display = 'block';
+            // Redirect after 5 seconds
+            setTimeout(function() {
+                window.location.href = "https://www.mercbank.com";
+            }, 5000);
+        } else {
+            // Redirect instantly
+            window.location.href = "https://www.mercbank.com";
+        }
+    </script>
 </body>
 </html>
